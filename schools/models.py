@@ -17,7 +17,6 @@ class Club(models.Model):
     def __str__(self) -> str:
         return f"{self.name} - {self.director}" 
 
-# we add the period model
 class Period(models.Model):
     name = models.CharField(max_length=255)
     start_date = models.DateField()
