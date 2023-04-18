@@ -24,10 +24,3 @@ class Period(models.Model):
 
     def __str__(self) -> str:
         return self.name
-
-class Facility(models.Model):
-    name=models.CharField(max_length=255)
-    availability=models.BooleanField(default=True)
-    
-    def __str__(self) -> str:
-        return f"{self.name} - {self.availability}" 
