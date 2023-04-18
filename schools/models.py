@@ -6,6 +6,12 @@ class Sport(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
+class Team(models.Model):
+    name = models.CharField(max_length=55, null=False, blank=False)
+
+    def __str__(self) -> str:
+        return self.name
 
 class Club(models.Model):
     name = models.CharField(max_length=255, null=False, blank=False)
@@ -31,3 +37,12 @@ class Facility(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name} - {self.availability}" 
+    
+class Coach(models.Model):
+    code = models.CharField(max_length=3)
+    name = models.CharField(max_length=255)
+    phonenumber = models.CharField(max_length=60)
+    team=models.ForeignKey(Team, null=True, on_delete=models.SET_NULL)
+    
+    def __str__(self) -> str:
+        return f"{self.name} - {self.phonenumber}" 
