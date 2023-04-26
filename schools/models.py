@@ -31,3 +31,11 @@ class Facility(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name} - {self.availability}" 
+
+class Coach(models.Model):
+    code = models.CharField(max_length=3)
+    name = models.CharField(max_length=255)
+    phonenumber = models.CharField(max_length=60)
+
+    def __str__(self) -> str:
+        return f"{self.name} - {self.phonenumber}" 
