@@ -23,4 +23,4 @@ class FacilityAdmin(admin.ModelAdmin):
 
 @admin.register(Coach)
 class CoachAdmin(admin.ModelAdmin):
-    list_display = ('name','phonenumber')
+    list_display = ('name','lastname','phonenumber')
