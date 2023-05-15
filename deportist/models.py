@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Deportist(models.Model):
-    registrationcode = models.IntegerField(max_length=3)
+    registrationcode = models.IntegerField()
     name = models.CharField(max_length=255)
     lastname = models.CharField(max_length=255)
     phonenumber = models.CharField(max_length=60)
