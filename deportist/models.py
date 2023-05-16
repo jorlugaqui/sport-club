@@ -18,12 +18,12 @@ class Deportist(models.Model):
             if existing_records.exists():
                 self.code = f"{self.club.id}{self.code}"
                 highest_code = Deportist.objects.filter(club=self.club).aggregate(models.Max('code'))['code__max']
-                self.code = highest_code + 1 if highest_code is not None else 1
+                self.code = str(highest_code + 1).zfill(5) if highest_code is not None else '00001'
                 super().save(*args, **kwargs)
             else:
 
                 highest_code = Deportist.objects.filter(club=self.club).aggregate(models.Max('code'))['code__max']
-                self.code = highest_code + 1 if highest_code is not None else 1
+                self.code = str(highest_code + 1).zfill(5) if highest_code is not None else '00001'
                 self.code = f"{self.club.id}{self.code}"
                 super().save(*args, **kwargs)
         else:
