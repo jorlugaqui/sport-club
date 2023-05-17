@@ -3,5 +3,5 @@ from .models import Deportist
 
 @admin.register(Deportist)
 class DeportistAdmin(admin.ModelAdmin):
-    ordering = ('lastname',)
+    ordering = ('code',)
     list_display = ('code','name', 'lastname')
